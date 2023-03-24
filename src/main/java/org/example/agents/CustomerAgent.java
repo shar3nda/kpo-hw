@@ -11,16 +11,23 @@ import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import org.example.configuration.JadeAgent;
+import org.example.model.Dish;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @JadeAgent
-public class BookBuyerAgent extends Agent {
+public class CustomerAgent extends Agent {
     // The title of the book to buy
     private String targetBookTitle;
     // The list of known seller agents
     private List<AID> sellerAgents;
 
+    // Заказ клиента
+    private List<Dish> Order = new ArrayList<>();
+
+    // меню
+    private List<Dish> menuItems = new ArrayList<>();
     @Override
     protected void setup() {
         // Printout a welcome message
